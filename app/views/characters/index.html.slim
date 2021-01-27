@@ -1,0 +1,17 @@
+doctype html
+html lang="en" 
+  head
+    meta charset="UTF-8" /
+    title Characters
+  body
+    - @characters.each do |character|
+      = character.name
+      = character.strength
+      = character.craft
+      = character.fate
+      = character.gold
+      = character.life
+      = character.starting_with_spell
+    = search_form_for @q do |f|
+      = f.label :name_cont
+      = f.search_field :name_cont
