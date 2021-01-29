@@ -12,10 +12,17 @@ gem 'slim'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'ransack'
 gem 'bootstrap'
+gem 'jquery-rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-checkstyle_formatter'
+  gem 'rubocop-rspec'
 end
 
 group :development do

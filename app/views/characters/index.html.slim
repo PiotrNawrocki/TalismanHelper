@@ -4,14 +4,36 @@ html lang="en"
     meta charset="UTF-8" /
     title Characters
   body
-    - @characters.each do |character|
-      = character.name
-      = character.strength
-      = character.craft
-      = character.fate
-      = character.gold
-      = character.life
-      = character.starting_with_spell
-    = search_form_for @q do |f|
-      = f.label :name_cont
-      = f.search_field :name_cont
+    .search_bar
+      = search_form_for @q do |f|
+        = f.label :name_cont
+        = f.search_field :name_cont
+
+    .flex-box-column
+      .d-flex.justify-content-center
+        .p-2.flex-fill.bd-highlight.text-center.col-3
+          = attribute_names[0]
+        -attribute_names[1..-2].each do |attribute|
+          .attribute.p-2.flex-fill.bd-highlight
+            = attribute.capitalize
+        .p-2.flex-fill.bd-highlight.text-center.col-3
+          = attribute_names[7]
+      .character_list
+        - @characters.each do |character|
+          .d-flex.justify-content-center
+            .p-2.flex-fill.bd-highlight.text-center.col-3
+              = character.name
+            .p-2.flex-fill.bd-highlight.text-center.col-1
+              = character.strength
+            .p-2.flex-fill.bd-highlight.text-center.col-1
+              = character.craft
+            .p-2.flex-fill.bd-highlight.text-center.col-1
+              = character.fate
+            .p-2.flex-fill.bd-highlight.text-center.col-1
+              = character.gold
+            .p-2.flex-fill.bd-highlight.text-center.col-1
+              = character.life
+            .p-2.flex-fill.bd-highlight.text-center.col-1
+              = character.starting_with_spell
+            .p-2.flex-fill.bd-highlight.text-center.col-3
+              = character.dlcs_id

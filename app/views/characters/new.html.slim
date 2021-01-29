@@ -1,0 +1,29 @@
+h1 New character
+
+= simple_form_for @character do |f|
+  .name
+    = f.input :name
+
+  .description
+    = f.input :description
+
+  .strength
+    = f.input :strength
+
+  .craft
+    = f.input :craft
+
+  .fate
+    = f.input :fate
+
+  .gold
+    = f.input :gold
+
+  .life
+    = f.input :life
+
+  .starting_with_spell
+    = f.input :starting_with_spell, as: :select, collection: Character.starting_with_spells
+  .submit
+    = f.submit
+

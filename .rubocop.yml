@@ -1,0 +1,273 @@
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.5.3
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'db/seeds.rb'
+    - 'config/sitemap.rb'
+    - 'Vagrantfile'
+    - 'node_modules/**/*'
+    - 'bin/*'
+    - 'lib/tasks/*'
+    - 'app/admin/**/*'
+    - 'vendor/**/*'
+    - 'ansible/**/*'
+    - 'app/views/reports/**/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+    - 'config/routes/seo_en_redirects.rb'
+    - 'app/services/invoices/*'
+  Max: 26
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/admin/**/*'
+    - 'config/routes.rb'
+    - 'config/initializers/simple_form_bootstrap.rb'
+    - 'config/routes/seo_en_redirects.rb'
+    - 'config/environments/*'
+    - 'config/deploy.rb'
+    - 'spec/**/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+    - 'config/routes/seo_en_redirects.rb'
+  Max: 25
+Metrics/ClassLength:
+  Max: 110
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Layout/LineLength:
+  Max: 130
+  Exclude:
+    - 'db/seeds/*'
+    - 'config/routes.rb'
+    - 'config/initializers/*'
+
+Rails:
+  Enabled: true
+
+RSpec/FilePath:
+  Exclude:
+    - 'spec/rails_helper.rb'
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/features/**/*'
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/features/**/*'
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/features/**/*'
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*' # allow multiline {} blocks in RSpec
+
+Style/Documentation: # This cop checks for missing top-level documentation of classes and modules.
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Naming:
+  Exclude:
+    - 'Capfile'
+    - 'Gemfile'
+
+Style/FormatString:
+  Enabled: false # Allow formatting string with any of Kernel#sprintf, Kernel#format, String#%
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'config/**/*'
+    - 'bin/*/'
+    - 'db/**/*'
+    - 'lib/tasks/**/*'
+    - 'spec/**/*'
+    - 'Gemfile'
+    - 'Capfile'
+
+Style/RescueModifier:
+  Exclude:
+    - 'config/deploy.rb'
+
+Style/SymbolProc:
+  Enabled: false
+
+Style/TrivialAccessors:
+  AllowPredicates: true # without this `def enabled? @enabled; end` is caught by Style/TrivialAccessors
+
+Style/FormatStringToken:
+  Enabled: false
+
+Layout/BeginEndAlignment:
+  Enabled: true
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: true
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/DuplicateElsifCondition:
+  Enabled: true
+
+Lint/DuplicateRequire:
+  Enabled: true
+
+Lint/DuplicateRescueException:
+  Enabled: true
+
+Lint/EmptyConditionalBody:
+  Enabled: true
+
+Lint/EmptyFile:
+  Enabled: true
+
+Lint/FloatComparison:
+  Enabled: true
+
+Lint/HashCompareByIdentity:
+  Enabled: true
+
+Lint/IdentityComparison:
+  Enabled: true
+
+Lint/MissingSuper:
+  Enabled: false
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Lint/OutOfRangeRegexpRef:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/RedundantSafeNavigation:
+  Enabled: false
+
+Lint/SelfAssignment:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Lint/TopLevelReturnWithArgument:
+  Enabled: true
+
+Lint/TrailingCommaInAttributeDeclaration:
+  Enabled: true
+
+Lint/UnreachableLoop:
+  Enabled: true
+
+Lint/UselessMethodDefinition:
+  Enabled: true
+
+Lint/UselessTimes:
+  Enabled: true
+
+Style/AccessorGrouping:
+  Enabled: true
+
+Style/BisectedAttrAccessor:
+  Enabled: true
+
+Style/CaseLikeIf:
+  Enabled: true
+
+Style/ClassEqualityComparison:
+  Enabled: true
+
+Style/CombinableLoops:
+  Enabled: true
+
+Style/ExplicitBlockArgument:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/GlobalStdStream:
+  Enabled: true
+
+Style/HashAsLastArrayItem:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashLikeCase:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/KeywordParametersOrder:
+  Enabled: true
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/RedundantAssignment:
+  Enabled: true
+
+Style/RedundantFetchBlock:
+  Enabled: true
+
+Style/RedundantFileExtensionInRequire:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: false
+
+Style/RedundantRegexpEscape:
+  Enabled: false
+
+Style/RedundantSelfAssignment:
+  Enabled: true
+
+Style/SingleArgumentDig:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
+
+Style/SoleNestedConditional:
+  Enabled: true
+
+Style/StringConcatenation:
+  Enabled: true

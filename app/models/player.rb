@@ -1,6 +1,6 @@
 class Player < ApplicationRecord
-  has_one :character
-  has_one :game
+  belongs_to :character
+  belongs_to :game
   has_many :player_followers
   has_many :game_followers, through: :player_followers
   has_many :player_items
